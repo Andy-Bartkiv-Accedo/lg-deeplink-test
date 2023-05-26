@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Test app</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<script src="main.js"></script>
+</head>
+
+<script src="webOSTVjs-1.2.4/webOSTV.js" charset="utf-8"></script>
+<script src="webOSTVjs-1.2.4/webOSTV-dev.js" charset="utf-8"></script>
+<script type="text/javascript">
+	//sample code for calling LS2 API
+	webOS.service.request("luna://com.palm.systemservice", {
+		method: "clock/getTime",
+		parameters: {},
+		onSuccess: function (args) {
+			console.log("UTC:", args.utc);
+		},
+		onFailure: function (args) {
+			console.log("Failed to getTime");
+		}
+	});
+</script>
+
+<body>
+  <header>
+    <hgroup>
+      <h1>WebOS Deeplink Test App</h1>
+      <h2>A basic template of LG TV</h2>
+    </hgroup>
+
+    <nav>
+      <ul>
+         <li><a href="#">Home</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <article>
+    <header style="display: flex; justify-content: center;">
+      <h1 style="display: flex; align-items: center;">
+        <img src="images/tizen_32.png" width="64"/> 
+      </h1>
+    </header>
+    <!-- <p style="font-size:40px;">This is an empty template of Tizen Web Application. Tizen will support multiple device categories:</p> -->
+
+    <div class="wrap-columns">
+      <div class="column left">
+        <p id='app-id-left'>App ID: ???</p>
+        <p id='app-name-left'>App Name: ???</p>
+        <button id="btn-left" class="action-btn">Try this App</button>
+      </div>
+      <div class="column center">
+				<p id='app-id-center'>App ID: ???</p>
+        <p id='app-name-center'>App Name: ???</p>
+        <button id="btn-center" class="action-btn">Try this App</button>
+      </div>
+      <div class="column right">
+        <p id='app-id-right'>App ID: ???</p>
+        <p id='app-name-right'>App Name: ???</p>
+        <button id="btn-right" class="action-btn">Try this App</button>
+      </div>
+      <div class="wrap-btn">
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <p>&copy; 2023 Accedo.tv</p>
+  </footer>    
+</body>
+
+</html>
